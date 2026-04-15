@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "X Direct Access Blocker",
+  "version": "2.0.0",
+  "description": "Allows limited daily viewing time for X direct access while keeping embeds visible.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "alarms"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "blocked.html"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://x.com/*",
+        "*://www.x.com/*",
+        "*://twitter.com/*",
+        "*://www.twitter.com/*"
+      ],
+      "js": [
+        "block.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "X Time Limit"
+  }
+}

@@ -1,4 +1,5 @@
-const DAILY_LIMIT_MS = 30 * 60 * 1000;
+const DAILY_LIMIT_MINUTES = 15;
+const DAILY_LIMIT_MS = DAILY_LIMIT_MINUTES * 60 * 1000;
 const RESET_HOUR_LOCAL = 5;
 const STORAGE_KEY = "x_time_limit_state_v1";
 const TICK_ALARM = "x-time-limit-tick";
